@@ -16,18 +16,8 @@ class XylophoneApp extends StatelessWidget {
                     ));
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
+  void createKeyNote () {
+    Expanded(
                   child: TextButton(
                     onPressed: () {
                       playSound(1);
@@ -39,7 +29,21 @@ class XylophoneApp extends StatelessWidget {
                       '',
                     ),
                   ),
-                ),
+                );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return  MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                
                 Expanded(
                   child: TextButton(
                     onPressed: () {
