@@ -2,39 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
 void main() {
-  runApp(
-  XylophoneApp()  );
+  runApp(XylophoneApp());
 }
 
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({super.key});
 
-  void playSound (int noteNumber) {
+  void playSound(int noteNumber) {
     AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
-                    assetsAudioPlayer.open(Audio(
-                      'assets/note$noteNumber.wav',
-                    ));
+    assetsAudioPlayer.open(Audio(
+      'assets/note$noteNumber.wav',
+    ));
   }
 
-  void createKeyNote () {
-    Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(1);
-                    },style: TextButton.styleFrom(
-                      backgroundColor: Colors.purpleAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                );
+  Expanded createKeyNote(Color buttonColor, int noteNumber) {
+    return Expanded(
+      child: TextButton(
+        onPressed: () {
+          playSound(noteNumber);
+        },
+        style: TextButton.styleFrom(
+          backgroundColor: buttonColor,
+          foregroundColor: Colors.white,
+        ),
+        child: const Text(
+          '',
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SafeArea(
@@ -43,86 +43,13 @@ class XylophoneApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(2);
-                    },style: TextButton.styleFrom(
-                      backgroundColor: Colors.indigoAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(3);
-                    },style: TextButton.styleFrom(
-                      backgroundColor: Colors.blueAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(4);
-                    },style: TextButton.styleFrom(
-                      backgroundColor: Colors.greenAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(5);
-                    },style: TextButton.styleFrom(
-                      backgroundColor: Colors.yellow,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(6);
-                    },style: TextButton.styleFrom(
-                      backgroundColor: Colors.orangeAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      playSound(7);
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.redAccent,
-                      foregroundColor: Colors.white,
-                    ),
-                    child: const Text(
-                      '',
-                    ),
-                  ),
-                ),
+                createKeyNote(Colors.purple, 1),
+                createKeyNote(Colors.indigo, 2),
+                createKeyNote(Colors.blue, 3),
+                createKeyNote(Colors.green, 4),
+                createKeyNote(Colors.yellow, 5),
+                createKeyNote(Colors.orange, 6),
+                createKeyNote(Colors.red, 7),
               ],
             ),
           ),
