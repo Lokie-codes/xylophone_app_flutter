@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
-void main() {
-  runApp(XylophoneApp());
-}
+void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({super.key});
@@ -15,11 +13,11 @@ class XylophoneApp extends StatelessWidget {
     ));
   }
 
-  Expanded createKeyNote({Color buttonColor, int noteNumber}) {
+  Expanded createKeyNote({Color? buttonColor, required int noteNumber}) {
     return Expanded(
       child: TextButton(
         onPressed: () {
-          playSound(noteNumber);
+          playSound(noteNumber!);
         },
         style: TextButton.styleFrom(
           backgroundColor: buttonColor,
