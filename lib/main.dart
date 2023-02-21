@@ -15,7 +15,7 @@ class XylophoneApp extends StatelessWidget {
     ));
   }
 
-  Expanded createKeyNote(Color buttonColor, int noteNumber) {
+  Expanded createKeyNote({Color buttonColor, int noteNumber}) {
     return Expanded(
       child: TextButton(
         onPressed: () {
@@ -43,13 +43,13 @@ class XylophoneApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                createKeyNote(Colors.purple, 1),
-                createKeyNote(Colors.indigo, 2),
-                createKeyNote(Colors.blue, 3),
-                createKeyNote(Colors.green, 4),
-                createKeyNote(Colors.yellow, 5),
-                createKeyNote(Colors.orange, 6),
-                createKeyNote(Colors.red, 7),
+                createKeyNote(buttonColor: Colors.purple, noteNumber: 1),
+                createKeyNote(buttonColor: Colors.indigo, noteNumber: 2),
+                createKeyNote(buttonColor: Colors.blue, noteNumber: 3),
+                createKeyNote(buttonColor: Colors.green, noteNumber: 4),
+                createKeyNote(buttonColor: Colors.yellow, noteNumber: 5),
+                createKeyNote(buttonColor: Colors.orange, noteNumber: 6),
+                createKeyNote(buttonColor: Colors.red, noteNumber: 7),
               ],
             ),
           ),
