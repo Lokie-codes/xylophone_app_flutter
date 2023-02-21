@@ -15,16 +15,19 @@ class XylophoneApp extends StatelessWidget {
 
   Expanded createKeyNote({Color? buttonColor, required int noteNumber}) =>
     Expanded(
-      child: TextButton(
-        onPressed: () {
-          playSound(noteNumber);
-        },
-        style: TextButton.styleFrom(
-          backgroundColor: buttonColor,
-          foregroundColor: Colors.white,
-        ),
-        child: const Text(
-          '',
+      child: Padding(
+        padding: const EdgeInsets.all(1.0),
+        child: TextButton(
+          onPressed: () {
+            playSound(noteNumber);
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: buttonColor,
+            foregroundColor: Colors.white,
+          ),
+          child: const Text(
+            '',
+          ),
         ),
       ),
     );
