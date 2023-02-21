@@ -13,8 +13,8 @@ class XylophoneApp extends StatelessWidget {
     ));
   }
 
-  Expanded createKeyNote({Color? buttonColor, required int noteNumber}) {
-    return Expanded(
+  Expanded createKeyNote({Color? buttonColor, required int noteNumber}) =>
+    Expanded(
       child: TextButton(
         onPressed: () {
           playSound(noteNumber!);
@@ -28,7 +28,6 @@ class XylophoneApp extends StatelessWidget {
         ),
       ),
     );
-  }
 
   @override
   Widget build(BuildContext context) {
